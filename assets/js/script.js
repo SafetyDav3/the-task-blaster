@@ -170,7 +170,7 @@ var editTask = function (taskId) {
   var taskType = taskSelected.querySelector("span.task-type").textContent;
   console.log(taskType);
 
-  // write values of taskname and taskType to form to be edited
+  // write values of taskName and taskType to form to be edited
   document.querySelector("input[name='task-name']").value = taskName;
   document.querySelector("select[name='task-type']").value = taskType;
 
