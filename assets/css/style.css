@@ -121,7 +121,6 @@ footer {
   color: var(--secondary);
   font-size: 1.55rem;
 }
-
 .task-actions {
   display: flex;
   flex-wrap: wrap;
@@ -152,7 +151,6 @@ footer {
   box-shadow: 0 2px var(--grey);
   top: -2px;
 }
-
 .btn:active {
   box-shadow: 0 0px var(--grey);
   top: 0;
@@ -212,7 +210,6 @@ footer {
   color: #222;
   outline: none;
 }
-
 .select-dropdown option,
 .select-status option {
   font-weight: normal;
