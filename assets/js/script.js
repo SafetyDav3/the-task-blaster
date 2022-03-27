@@ -41,7 +41,7 @@ var taskFormHandler = function (event) {
   }
 };
 
-var createTaskEl = function(taskDataObj) {
+var createTaskEl = function (taskDataObj) {
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
   listItemEl.setAttribute("data-task-id", taskIdCounter);
@@ -49,7 +49,11 @@ var createTaskEl = function(taskDataObj) {
   var taskInfoEl = document.createElement("div");
   taskInfoEl.className = "task-info";
   taskInfoEl.innerHTML =
-    "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
+    "<h3 class='task-name'>" +
+    taskDataObj.name +
+    "</h3><span class='task-type'>" +
+    taskDataObj.type +
+    "</span>";
   listItemEl.appendChild(taskInfoEl);
 
   var taskActionsEl = createTaskActions(taskIdCounter);
@@ -57,15 +61,21 @@ var createTaskEl = function(taskDataObj) {
 
   switch (taskDataObj.status) {
     case "to do":
-      taskActionsEl.querySelector("select[name='status-change']").selectedIndex = 0;
+      taskActionsEl.querySelector(
+        "select[name='status-change']"
+      ).selectedIndex = 0;
       tasksToDoEl.append(listItemEl);
       break;
     case "in progress":
-      taskActionsEl.querySelector("select[name='status-change']").selectedIndex = 1;
+      taskActionsEl.querySelector(
+        "select[name='status-change']"
+      ).selectedIndex = 1;
       tasksInProgressEl.append(listItemEl);
       break;
     case "completed":
-      taskActionsEl.querySelector("select[name='status-change']").selectedIndex = 2;
+      taskActionsEl.querySelector(
+        "select[name='status-change']"
+      ).selectedIndex = 2;
       tasksCompletedEl.append(listItemEl);
       break;
     default:
@@ -247,11 +257,11 @@ var deleteTask = function (taskId) {
   saveTasks();
 };
 
-var saveTasks = function() {
+var saveTasks = function () {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
-var loadTasks = function() {
+var loadTasks = function () {
   var savedTasks = localStorage.getItem("tasks");
   // if there are no tasks, set tasks to an empty array and return out of the function
   if (!savedTasks) {
